@@ -1,3 +1,12 @@
+---
+title: Network Security AI Tutor
+emoji: 🔐
+colorFrom: indigo
+colorTo: purple
+sdk: docker
+app_port: 7860
+pinned: false
+---
 # Network Security AI Tutor & Quiz Generator
 
 **[Give the app a try](https://huggingface.co/spaces/YOUR_USERNAME/YOUR_SPACE_NAME)** — replace this URL with your deployed app, and set the same value as `PUBLIC_APP_URL` in `.env`.
