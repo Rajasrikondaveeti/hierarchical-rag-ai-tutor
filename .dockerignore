@@ -1,0 +1,20 @@
+# Virtual Environments
+venv/
+app_venv/
+env/
+
+# Secrets and Local Configs
+.env
+
+# Python Cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+
+# Optional: Ignore Local Vector DBs if you plan on regenerating them per-container
+# qdrant_storage/

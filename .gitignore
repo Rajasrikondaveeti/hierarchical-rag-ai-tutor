@@ -1,0 +1,21 @@
+# OS files
+.DS_Store
+
+# Python virtual environments
+venv/
+.env
+.env/
+
+# Logs and temp files
+*.log
+query_logs.txt
+__pycache__/
+*.pyc
+
+# Local embedded Qdrant data (no Docker)
+qdrant_storage/
+
+# IDE files
+.vscode/
+.idea/
+
