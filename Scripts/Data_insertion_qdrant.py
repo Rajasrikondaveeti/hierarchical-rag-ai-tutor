@@ -6,6 +6,7 @@ import uuid # Used to generate unique IDs for each stored page
 import sys
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
+from qdrant_client.models import PointStruct
 from qdrant_connection import build_qdrant_client
 
 # ------------------------------------------------------------
@@ -46,15 +47,17 @@ def process_pdfs(directory):
         
         qdrant_client.upsert(
             collection_name=collection_name,
-            points=[{
-                "id": point_id,  # Use UUID as the point ID
-                "vector": embedding.tolist(),
-                "payload": {
-                    "document": doc_name,
-                    "page_number": page_num,
-                    "text": text[:500]  # Store the first 500 characters for reference
-                }
-            }]
+            points=[
+                PointStruct(
+                    id=point_id,
+                    vector=embedding.tolist(),
+                    payload={
+                        "document": doc_name,
+                        "page_number": page_num,
+                        "text": text[:500]
+                    }
+                )
+            ]
         )
     # Final summary after processing all PDFs
     print(f"Processed {len(page_texts)} pages from {len(pdf_files)} documents")
