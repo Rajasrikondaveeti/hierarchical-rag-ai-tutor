@@ -18,6 +18,26 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 from qdrant_connection import build_qdrant_client
 
+# -- Auto-initialization for Cloud/Docker Environments --
+def ensure_collection_exists():
+    collection_name = "network_security_knowledge"
+    try:
+        # Check if collection exists
+        cols = qdrant_client.get_collections().collections
+        exists = any(c.name == collection_name for c in cols)
+        if not exists:
+            print(f"📦 Collection '{collection_name}' not found. Initializing...")
+            from initialise_qdrant import initialize_qdrant
+            from Data_insertion_qdrant import process_pdfs
+            
+            initialize_qdrant()
+            _root = Path(__file__).resolve().parent.parent
+            pdf_path = _root / "knowledge_base"
+            process_pdfs(str(pdf_path))
+            print("✅ Auto-initialization complete.")
+    except Exception as e:
+        print(f"⚠️ Warning during auto-init: {e}")
+
 _ROOT = Path(__file__).resolve().parent.parent
 load_dotenv(_ROOT / ".env")
 
@@ -25,6 +45,7 @@ logging.basicConfig(filename="query_logs.txt", level=logging.INFO)
 
 embedder = SentenceTransformer("all-MiniLM-L12-v2")
 qdrant_client = build_qdrant_client()
+ensure_collection_exists()
 
 OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY", "").strip()
 OPENAI_MODEL = (os.environ.get("OPENAI_MODEL", "gpt-4o-mini") or "gpt-4o-mini").strip()
