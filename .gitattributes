@@ -61,3 +61,5 @@ knowledge_base/Lecture[[:space:]]7_slides.pdf filter=lfs diff=lfs merge=lfs -tex
 knowledge_base/Lecture[[:space:]]8_slides.pdf filter=lfs diff=lfs merge=lfs -text
 knowledge_base/Lecture[[:space:]]9_slides.pdf filter=lfs diff=lfs merge=lfs -text
 knowledge_base/Network[[:space:]]Security[[:space:]]Essentials_[[:space:]]A[[:space:]]-[[:space:]]William[[:space:]]Stallings_8252[[:space:]]12.49.33ΓÇ»PM.pdf filter=lfs diff=lfs merge=lfs -text
+knowledge_base/*.pdf filter=lfs diff=lfs merge=lfs -text
+*.pdf filter=lfs diff=lfs merge=lfs -text
