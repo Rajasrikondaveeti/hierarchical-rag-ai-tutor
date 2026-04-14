@@ -570,8 +570,14 @@ with gr.Blocks(title="🔐 Network Security Learning Hub") as app:
                                 label="📎 Sources"
                             )
                     
+                    def ui_generate(p, m):
+                        try:
+                            return cached_generate_response(p, m)
+                        except Exception as e:
+                            import traceback
+                            return f"⚠️ CRASH: {str(e)}\n\n{traceback.format_exc()}", "ERROR TRACE"
                     ask_btn.click(
-                        lambda p, m: cached_generate_response(p, m),
+                        ui_generate,
                         [t_in, t_mode],
                         [t_out, t_src]
                     )
