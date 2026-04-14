@@ -13,6 +13,9 @@ from openai import OpenAI
 from rapidfuzz import fuzz
 from sentence_transformers import SentenceTransformer, util
 
+import sys
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
 from qdrant_connection import build_qdrant_client
 
 _ROOT = Path(__file__).resolve().parent.parent
