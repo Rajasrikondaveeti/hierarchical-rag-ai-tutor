@@ -2,6 +2,10 @@
 
 from qdrant_client.http.models import Distance, VectorParams
 
+import os
+import sys
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
 from qdrant_connection import build_qdrant_client
 
 
