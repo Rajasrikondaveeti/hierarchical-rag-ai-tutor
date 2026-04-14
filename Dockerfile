@@ -7,11 +7,8 @@ USER user
 # Set essential environment variables
 ENV HOME=/home/user \
     PATH=/home/user/.local/bin:$PATH \
-<<<<<<< HEAD
     PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1 \
-=======
->>>>>>> ca5dd124926a160c26fb877c9e61624038066519
     GRADIO_SERVER_NAME="0.0.0.0" \
     GRADIO_SERVER_PORT="7860"
 

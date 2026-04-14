@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import os
 import sys
 from pathlib import Path
@@ -22,6 +21,3 @@ if __name__ == "__main__":
         css=custom_css,
         share=os.environ.get("GRADIO_SHARE", "").lower() in ("1", "true", "yes")
     )
-=======
-import Scripts.chatbot_application
->>>>>>> ca5dd124926a160c26fb877c9e61624038066519

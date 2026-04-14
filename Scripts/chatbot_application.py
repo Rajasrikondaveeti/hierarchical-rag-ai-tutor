@@ -710,15 +710,8 @@ with gr.Blocks(title="🔐 Network Security Learning Hub") as app:
     </div>
     """)
 
-<<<<<<< HEAD
 if __name__ == "__main__":
     app.launch(
         share=os.environ.get("GRADIO_SHARE", "").lower() in ("1", "true", "yes"),
         css=custom_css,
     )
-=======
-app.launch(
-    share=os.environ.get("GRADIO_SHARE", "").lower() in ("1", "true", "yes"),
-    css=custom_css,
-)
->>>>>>> ca5dd124926a160c26fb877c9e61624038066519
