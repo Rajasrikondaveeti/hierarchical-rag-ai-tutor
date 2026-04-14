@@ -3,6 +3,9 @@ from sentence_transformers import SentenceTransformer
 import os
 import uuid # Used to generate unique IDs for each stored page
 
+import sys
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
 from qdrant_connection import build_qdrant_client
 
 # ------------------------------------------------------------
