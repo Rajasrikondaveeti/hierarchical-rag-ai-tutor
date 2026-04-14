@@ -498,16 +498,6 @@ custom_css = """
 }
 """
 
-_demo_try_sidebar = (
-    f"### 🚀 Try the live app\n"
-    f"**[Give the quiz generator a try]({PUBLIC_APP_URL})** — share this link on GitHub or your portfolio.\n"
-    if PUBLIC_APP_URL
-    else (
-        "### 🚀 Try the live app\n"
-        "After you deploy (for example [Hugging Face Spaces](https://huggingface.co/spaces)), set **`PUBLIC_APP_URL`** in `.env` "
-        "to the public URL. The same link is documented at the top of `README.md` for visitors.\n"
-    )
-)
 
 _quiz_demo_banner = (
     f'<p style="text-align:center;margin:0 0 12px 0;"><a href="{PUBLIC_APP_URL}" target="_blank" rel="noopener noreferrer" '
@@ -548,7 +538,6 @@ with gr.Blocks(title="🔐 Network Security Learning Hub") as app:
             - PKI & Digital Signatures
             - And more...
             """)
-            gr.Markdown(_demo_try_sidebar)
         
         with gr.Column(scale=3):
             with gr.Tabs():
@@ -703,7 +692,7 @@ with gr.Blocks(title="🔐 Network Security Learning Hub") as app:
                     )
 
     # Footer
-    gr.Markdown("""
+    gr.Markdown(f"""
     ---
     <div style="text-align: center; color: #666; padding: 20px;">
     <p>🔒 Powered by OpenAI ({OPENAI_MODEL}), Sentence Transformers & Qdrant</p>
