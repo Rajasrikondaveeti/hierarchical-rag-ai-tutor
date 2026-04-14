@@ -24,6 +24,9 @@ RUN pip install --no-cache-dir --user gradio sentence-transformers
 # Copy the remaining project files
 COPY --chown=user . .
 
+# Pre-index the knowledge base so the collection exists before the first user arrives
+RUN python Scripts/initialise_qdrant.py && python Scripts/Data_insertion_qdrant.py
+
 # Expose the Gradio container port
 EXPOSE 7860
 
