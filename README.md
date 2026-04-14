@@ -1,15 +1,6 @@
----
-title: Network Security AI Tutor
-emoji: 🔐
-colorFrom: indigo
-colorTo: purple
-sdk: docker
-app_port: 7860
-pinned: false
----
 # Network Security AI Tutor & Quiz Generator
 
-**[Give the app a try](https://huggingface.co/spaces/rajasri77/Network-Security-AI-Tutor)** 
+**👉 [🚀 Try the Live App](https://huggingface.co/spaces/rajasri77/Network-Security-AI-Tutor)** 
 
 I have developed an **AI Tutor and custom Quiz Generator**. It uses a **Retrieval-Augmented Generation (RAG)** system that answers questions primarily from my own **lecture slides and textbook** (PDFs in a local knowledge base). When the vector store does not surface relevant material, the app **falls back to the web** using **SerpAPI** (Google search results). Answers and quizzes are generated with **OpenAI** using a **small, fast model** (`gpt-4o-mini` by default).
 
@@ -113,19 +104,13 @@ Navigate your browser to `http://localhost:7860`.
 | Variable | Required | Purpose |
 |----------|----------|---------|
 | `OPENAI_API_KEY` | Yes | Chat completions for tutor answers and quiz generation |
-| `OPENAI_MODEL` | No | Default `gpt-4o-mini` (fast / cost-effective) |
 | `SERPAPI_API_KEY` | Yes for web fallback | Google search via SerpAPI when RAG misses |
-| `PUBLIC_APP_URL` | No | Public demo URL for **Give it a try** links in the UI and README |
-| `GRADIO_SHARE` | No | Set to `true` for a temporary `share.gradio` link |
-| `QDRANT_PATH` | No | Custom folder for embedded Qdrant data (default: `qdrant_storage/`) |
-| `QDRANT_URL` | No | Remote Qdrant (e.g. cloud); use with `QDRANT_API_KEY` if required |
 
 ## Project layout
 
 | Path | Role |
 |------|------|
 | `knowledge_base/` | PDFs (lectures, textbook) |
-| `.env` | Local secrets (not committed) |
 | `.env.example` | Template for required variables |
 | `Scripts/qdrant_connection.py` | Builds Qdrant client (embedded disk by default; optional cloud URL) |
 | `Scripts/initialise_qdrant.py` | Creates/recreates Qdrant collection `network_security_knowledge` |
