@@ -234,7 +234,7 @@ def parse_mcq(block, source):
         "source": source
     }
 
-# Parses True/False questions from the GPT4All output
+# Parses True/False questions from the GPT4 output
 def parse_tf(block, source):
     q = re.search(r"QUESTION:\s*(.+)", block)
     correct = re.search(r"CORRECT:\s*(True|False)", block, re.I)
@@ -250,7 +250,7 @@ def parse_tf(block, source):
         "source": source
     }
 
-# Parses Open-ended questions from the GPT4All output
+# Parses Open-ended questions from the GPT4 output
 def parse_open(block, source):
     q = re.search(r"QUESTION:\s*(.+)", block)
     ans = re.search(r"EXPECTED_ANSWER:\s*(.+)", block)

@@ -1,21 +1,29 @@
 # OS files
 .DS_Store
+**/.DS_Store
+Thumbs.db
 
 # Python virtual environments
 venv/
+app_venv/
+env/
 .env
-.env/
 
 # Logs and temp files
 *.log
 query_logs.txt
+err.txt
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
 
-# Local embedded Qdrant data (no Docker)
+# Local embedded Qdrant data
 qdrant_storage/
+qdrant_storage_test/
 
 # IDE files
 .vscode/
 .idea/
-
+*.swp
+*.pdm-python

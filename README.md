@@ -9,9 +9,11 @@ pinned: false
 ---
 # Network Security AI Tutor & Quiz Generator
 
-**[Give the app a try](https://huggingface.co/spaces/YOUR_USERNAME/YOUR_SPACE_NAME)** — replace this URL with your deployed app, and set the same value as `PUBLIC_APP_URL` in `.env`.
+**[Give the app a try](https://huggingface.co/spaces/rajasri77/Network-Security-AI-Tutor)** 
 
 I have developed an **AI Tutor and custom Quiz Generator**. It uses a **Retrieval-Augmented Generation (RAG)** system that answers questions primarily from my own **lecture slides and textbook** (PDFs in a local knowledge base). When the vector store does not surface relevant material, the app **falls back to the web** using **SerpAPI** (Google search results). Answers and quizzes are generated with **OpenAI** using a **small, fast model** (`gpt-4o-mini` by default).
+
+An intelligent study companion powered by Retrieval-Augmented Generation (RAG). Ask questions and get answers drawn directly from your lecture slides and textbook — with automatic Google search fallback when local knowledge isn't enough. Includes a full Quiz Center for MCQ, true/false, and open-ended practice questions.
 
 The project ships with a **Gradio** web UI: an **AI Tutor** for Q&A and a **Quiz Center** that generates MCQs, true/false, and open questions from the same RAG context (or from web snippets if local retrieval is weak).
 
@@ -50,7 +52,7 @@ Copy `.env.example` to `.env` and fill in your keys:
 OPENAI_API_KEY=sk-...
 SERPAPI_API_KEY=...
 OPENAI_MODEL=gpt-4o-mini
-PUBLIC_APP_URL=https://huggingface.co/spaces/you/your-space
+PUBLIC_APP_URL=https://huggingface.co/spaces/rajasri77/Network-Security-AI-Tutor
 ```
 
 Use standard `KEY=value` lines (no spaces around `=`). Never commit `.env` (it is listed in `.gitignore`).

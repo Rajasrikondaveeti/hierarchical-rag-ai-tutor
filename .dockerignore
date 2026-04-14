@@ -12,9 +12,16 @@ __pycache__/
 *.pyo
 *.pyd
 
+# Logs
+*.log
+query_logs.txt
+err.txt
+
 # Operating System Files
 .DS_Store
+**/.DS_Store
 Thumbs.db
 
-# Optional: Ignore Local Vector DBs if you plan on regenerating them per-container
-# qdrant_storage/
+# Vector DB Storage
+qdrant_storage/
+qdrant_storage_test/
